@@ -25,6 +25,7 @@ class MainMenu(frontend.MenuPrincipal):
         self.button_servico["command"] = self.get_servico
         self.button_servico["command"] = self.get_servico
         self.button_equip_serv["command"] = self.get_equip_ser
+        self.button_estatistica["command"] = self.get_estatistica
 
     def get_paciente(self):
         """Invoque a GUI Paciente."""
@@ -49,6 +50,9 @@ class MainMenu(frontend.MenuPrincipal):
     def get_equip_ser(self):
         """Invoque a GUI Equipamento-Serviço."""
         MainEquipSer(self)
+        
+    def get_estatistica(self):
+        MainEstatistica(self)
 
 
 class MainPaciente(backend.BackendPaciente):
@@ -402,6 +406,21 @@ class MainEquipSer(backend.BackendEquipSer):
                                   self.gui.txt_equipamento.get())
         except tkinter.TclError:
             print('Insira um números nos campos numéricos (não vazio).')
+            
+class MainEstatistica(backend.BackendEstatistica):
+    def __init__(self, main):
+        backend.BackendEstatistica.__init__(self)
+        self.gui = frontend.GUIEstatistica(main)
+        self.gui.btn_atualizar["command"] = self.comando_atualizar
+        self.gui.btn_retornar["command"] = self.gui.destroy
+        
+    def comando_atualizar(self):
+        self.comando_media_idade()
+            
+    def comando_media_idade(self):
+        print(self.media_idade())
+        media = self.media_idade()
+        self.gui.lbl_media_idade["text"] = media
 
 
 PROGRAMA = MainMenu()

@@ -469,6 +469,21 @@ class BackendEquipSer(BD):
 
         self.persistir()
         self.desconectar()
+        
+class BackendEstatistica(BD):
+    def __init__(self):
+        BD.__init__(self)
+        
+    def media_idade(self):
+        self.conectar()
+        
+        self.executar("SELECT AVG(idade)::DECIMAL(3,1) FROM paciente")
+        
+        media = self.fetchall()
+        
+        self.persistir()
+        self.desconectar()
+        return media
 
 
 def inicializar_database():

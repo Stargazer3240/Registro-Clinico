@@ -22,6 +22,7 @@ class MenuPrincipal(Tk):
         self.frame_equipamento = tk.Frame(self)
         self.frame_servico = tk.Frame(self)
         self.frame_equip_serv = tk.Frame(self)
+        self.frame_estatistica = tk.Frame(self)
         self.frame_menu.grid(row=0, column=0)
         self.button_paciente = tk.Button(self.frame_menu, text='Pacientes')
         self.button_profissional = tk.Button(self.frame_menu,
@@ -32,6 +33,8 @@ class MenuPrincipal(Tk):
         self.button_servico = tk.Button(self.frame_menu, text='Serviços')
         self.button_equip_serv = tk.Button(self.frame_menu,
                                            text='Equipamentos e Serviços')
+        self.button_estatistica = tk.Button(self.frame_menu,
+                                            text='Estatistica')
         self.button_paciente.grid(row=0, column=0, padx=5,
                                   pady=5, sticky='we')
         self.button_profissional.grid(row=1, column=0, padx=5,
@@ -43,6 +46,8 @@ class MenuPrincipal(Tk):
         self.button_servico.grid(row=1, column=1, padx=5,
                                  pady=5, sticky='we')
         self.button_equip_serv.grid(row=2, column=1, padx=5,
+                                    pady=5, sticky='we')
+        self.button_estatistica.grid(row=3, column=0, columnspan=2, padx=5,
                                     pady=5, sticky='we')
 
 
@@ -440,4 +445,27 @@ class GUIEquiSer(Toplevel):
                               pady=3, sticky='WE')
         self.btn_retornar.grid(row=6, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
+
+class GUIEstatistica(Toplevel):
+    def __init__(self, parent):
+        Toplevel.__init__(self, master=parent)
+        self.wm_title('Estatistica')
+        self.frame_estatistica = tk.Frame(self)
+        self.frame_estatistica.grid(row=3, column=0)
+        
+        self.lbl_idade = tk.Label(self.frame_estatistica, text='Idade Média')
+        self.lbl_media_idade = tk.Label(self.frame_estatistica)
+        
+        self.btn_atualizar = tk.Button(self.frame_estatistica, text='Atualizar')
+        self.btn_retornar = tk.Button(self.frame_estatistica, text='Retornar')
+        
+        self.lbl_idade.grid(row=0, column=0, padx=5, pady=3)
+        self.lbl_media_idade.grid(row=0, column=1, padx=5, pady=3)
+        
+        self.btn_atualizar.grid(row=1, column=0, columnspan=2, padx=5,
+                               pady=3, sticky='WE')
+        self.btn_retornar.grid(row=2, column=0, columnspan=2, padx=5,
+                               pady=3, sticky='WE')
+
+    
  
