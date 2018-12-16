@@ -86,6 +86,19 @@ class BackendPaciente(BD):
         self.persistir()
         self.desconectar()
 
+    def listar_paciente(self):
+        """Busque informações de tudo da tabela Paciente."""
+        self.conectar()
+
+        self.executar("SELECT * FROM paciente")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
+
     def selecionar_paciente(self, codigo, cpf, nome, idade, sexo, doenca,
                             altura, peso, cidade, bairro, rua, numero,
                             complemento):
@@ -165,6 +178,19 @@ class BackendProfissional(BD):
         self.persistir()
         self.desconectar()
 
+    def listar_profissional(self):
+        """Busque informações de tudo da tabela Profissional."""
+        self.conectar()
+
+        self.executar("SELECT * FROM profissional")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
+
     def selecionar_profissional(self, codigo, cnpj, nome, salario, atuacao):
         """Busque informações da tabela Profissional."""
         self.conectar()
@@ -226,6 +252,19 @@ class BackendSala(BD):
         self.persistir()
         self.desconectar()
 
+    def listar_sala(self):
+        """Busque informações de tudo da tabela Sala."""
+        self.conectar()
+
+        self.executar("SELECT * FROM sala")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
+
     def selecionar_sala(self, sigla, capacidade):
         """Busque informações da tabela Sala."""
         self.conectar()
@@ -285,6 +324,19 @@ class BackendEquipamento(BD):
 
         self.persistir()
         self.desconectar()
+
+    def listar_equipamento(self):
+        """Busque informações de tudo da tabela Equipamento."""
+        self.conectar()
+
+        self.executar("SELECT * FROM equipamento")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
 
     def selecionar_equipamento(self, codigo, nome):
         """Busque informações da tabela Equipamento."""
@@ -353,6 +405,19 @@ class BackendServico(BD):
 
         self.persistir()
         self.desconectar()
+
+    def listar_servico(self):
+        """Busque informações de tudo da tabela Serviço."""
+        self.conectar()
+
+        self.executar("SELECT * FROM servico")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
 
     def selecionar_servico(self, codigo, nome, tipo, receita, hora, saida,
                            data, sala, paciente, profissional):
@@ -443,6 +508,19 @@ class BackendEquipSer(BD):
         self.persistir()
         self.desconectar()
 
+    def listar_equipser(self):
+        """Busque informações de tudo da tabela Equipamento-Serviço."""
+        self.conectar()
+
+        self.executar("SELECT * FROM equipamento_servico")
+
+        rows = self.fetchall()
+        self.persistir()
+        self.desconectar()
+        for row in rows:
+            print(row)
+        print('')
+
     def selecionar_equipser(self, servico, equipamento):
         """Busque informações da tabela Equipamento-Serviço."""
         self.conectar()
@@ -469,22 +547,96 @@ class BackendEquipSer(BD):
 
         self.persistir()
         self.desconectar()
-        
+
 class BackendEstatistica(BD):
+    """Realize os comandos SQL da tabela Estatistica."""
     def __init__(self):
         BD.__init__(self)
-        
+
     def media_idade(self):
+        """Busque a média das idades da tabela Paciente."""
         self.conectar()
-        
+
         self.executar("SELECT AVG(idade)::DECIMAL(3,1) FROM paciente")
-        
+
         media = self.fetchall()
-        
+
         self.persistir()
         self.desconectar()
         return media
 
+    def count_sexo(self):
+        """Busque a contagem de cada sexo da tabela Paciente."""
+        self.conectar()
+
+        self.executar("SELECT sexo, COUNT(sexo) FROM paciente WHERE \
+                      sexo='M' OR sexo='F' GROUP BY sexo;")
+
+        count_sexo = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return count_sexo
+
+    def media_altura(self):
+        """Busque a média das alturas da tabela Paciente."""
+        self.conectar()
+
+        self.executar("SELECT AVG(altura)::DECIMAL(3,1) FROM paciente")
+
+        media = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return media
+
+    def media_peso(self):
+        """Busque a média dos pesos da tabela Paciente."""
+        self.conectar()
+
+        self.executar("SELECT AVG(peso)::DECIMAL(3,1) FROM paciente")
+
+        media = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return media
+
+    def media_salario(self):
+        """Busque a média dos salários da tabela Profissional."""
+        self.conectar()
+
+        self.executar("SELECT AVG(salario)::DECIMAL(5,1) FROM profissional")
+
+        media = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return media
+
+    def media_receita(self):
+        """Busque a média das receitas da tabela Serviço."""
+        self.conectar()
+
+        self.executar("SELECT AVG(receita)::DECIMAL(5,1) FROM servico")
+
+        media = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return media
+
+    def media_capacidade(self):
+        """Busque a média das capacidades da tabela Sala."""
+        self.conectar()
+
+        self.executar("SELECT AVG(capacidade)::DECIMAL(4,1) FROM sala")
+
+        media = self.fetchall()
+
+        self.persistir()
+        self.desconectar()
+        return media
 
 def inicializar_database():
     """Crie as tabelas no banco de dados."""

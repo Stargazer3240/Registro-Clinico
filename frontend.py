@@ -48,7 +48,7 @@ class MenuPrincipal(Tk):
         self.button_equip_serv.grid(row=2, column=1, padx=5,
                                     pady=5, sticky='we')
         self.button_estatistica.grid(row=3, column=0, columnspan=2, padx=5,
-                                    pady=5, sticky='we')
+                                     pady=5, sticky='we')
 
 
 class GUIPaciente(Toplevel):
@@ -118,6 +118,7 @@ class GUIPaciente(Toplevel):
 
 
         self.btn_inserir = tk.Button(self.frame_paciente, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_paciente, text='Listar')
         self.btn_selecionar = tk.Button(self.frame_paciente, text='Selecionar')
         self.btn_atualizar = tk.Button(self.frame_paciente, text='Atualizar')
         self.btn_deletar = tk.Button(self.frame_paciente, text='Deletar')
@@ -153,13 +154,15 @@ class GUIPaciente(Toplevel):
 
         self.btn_inserir.grid(row=4, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=5, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=5, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=6, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
-        self.btn_atualizar.grid(row=6, column=0, columnspan=2, padx=5,
+        self.btn_atualizar.grid(row=7, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
-        self.btn_deletar.grid(row=7, column=0, columnspan=2, padx=5,
+        self.btn_deletar.grid(row=8, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=8, column=0, columnspan=2, padx=5,
+        self.btn_retornar.grid(row=9, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
 
 
@@ -195,6 +198,8 @@ class GUIProfissional(Toplevel):
                                     textvariable=self.txt_atuacao)
 
         self.btn_inserir = tk.Button(self.frame_profissional, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_profissional,
+                                    text='Listar')
         self.btn_selecionar = tk.Button(self.frame_profissional,
                                         text='Selecionar')
         self.btn_atualizar = tk.Button(self.frame_profissional, text=
@@ -216,13 +221,15 @@ class GUIProfissional(Toplevel):
 
         self.btn_inserir.grid(row=5, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=6, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=6, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=7, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
-        self.btn_atualizar.grid(row=7, column=0, columnspan=2, padx=5,
+        self.btn_atualizar.grid(row=8, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
-        self.btn_deletar.grid(row=8, column=0, columnspan=2, padx=5,
+        self.btn_deletar.grid(row=9, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=9, column=0, columnspan=2, padx=5,
+        self.btn_retornar.grid(row=10, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
 
 
@@ -245,6 +252,7 @@ class GUISala(Toplevel):
                                        textvariable=self.txt_capacidade)
 
         self.btn_inserir = tk.Button(self.frame_sala, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_sala, text='Listar')
         self.btn_selecionar = tk.Button(self.frame_sala, text='Selecionar')
         self.btn_atualizar = tk.Button(self.frame_sala, text='Atualizar')
         self.btn_deletar = tk.Button(self.frame_sala, text='Deletar')
@@ -258,13 +266,15 @@ class GUISala(Toplevel):
 
         self.btn_inserir.grid(row=2, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=3, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=3, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=4, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
-        self.btn_atualizar.grid(row=4, column=0, columnspan=2, padx=5,
+        self.btn_atualizar.grid(row=5, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
-        self.btn_deletar.grid(row=5, column=0, columnspan=2, padx=5,
+        self.btn_deletar.grid(row=6, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=6, column=0, columnspan=2, padx=5,
+        self.btn_retornar.grid(row=7, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
 
 
@@ -288,6 +298,7 @@ class GUIEquipamento(Toplevel):
                                  textvariable=self.txt_nome)
 
         self.btn_inserir = tk.Button(self.frame_equipamento, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_equipamento, text='Listar')
         self.btn_selecionar = tk.Button(self.frame_equipamento, text=
                                         'Selecionar')
         self.btn_atualizar = tk.Button(self.frame_equipamento, text=
@@ -303,13 +314,15 @@ class GUIEquipamento(Toplevel):
 
         self.btn_inserir.grid(row=2, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=3, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=3, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=4, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
-        self.btn_atualizar.grid(row=4, column=0, columnspan=2, padx=5,
+        self.btn_atualizar.grid(row=5, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
-        self.btn_deletar.grid(row=5, column=0, columnspan=2, padx=5,
+        self.btn_deletar.grid(row=6, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=6, column=0, columnspan=2, padx=5,
+        self.btn_retornar.grid(row=7, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
 
 
@@ -367,6 +380,7 @@ class GUIServico(Toplevel):
                                          textvariable=self.txt_profissional)
 
         self.btn_inserir = tk.Button(self.frame_servico, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_servico, text='Listar')
         self.btn_selecionar = tk.Button(self.frame_servico, text='Selecionar')
         self.btn_atualizar = tk.Button(self.frame_servico, text='Atualizar')
         self.btn_deletar = tk.Button(self.frame_servico, text='Deletar')
@@ -396,13 +410,15 @@ class GUIServico(Toplevel):
 
         self.btn_inserir.grid(row=4, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=5, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=5, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=6, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
-        self.btn_atualizar.grid(row=6, column=0, columnspan=2, padx=5,
+        self.btn_atualizar.grid(row=7, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
-        self.btn_deletar.grid(row=7, column=0, columnspan=2, padx=5,
+        self.btn_deletar.grid(row=8, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=8, column=0, columnspan=2, padx=5,
+        self.btn_retornar.grid(row=9, column=0, columnspan=2, padx=5,
                                pady=3, sticky='WE')
 
 
@@ -427,6 +443,7 @@ class GUIEquiSer(Toplevel):
                                         textvariable=self.txt_equipamento)
 
         self.btn_inserir = tk.Button(self.frame_equip_serv, text='Inserir')
+        self.btn_listar = tk.Button(self.frame_equip_serv, text='Listar')
         self.btn_selecionar = tk.Button(self.frame_equip_serv, text=
                                         'Selecionar')
         self.btn_deletar = tk.Button(self.frame_equip_serv, text='Deletar')
@@ -439,7 +456,9 @@ class GUIEquiSer(Toplevel):
 
         self.btn_inserir.grid(row=2, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
-        self.btn_selecionar.grid(row=3, column=0, columnspan=2, padx=5,
+        self.btn_listar.grid(row=3, column=0, columnspan=2, padx=5,
+                             pady=3, sticky='WE')
+        self.btn_selecionar.grid(row=4, column=0, columnspan=2, padx=5,
                                  pady=3, sticky='WE')
         self.btn_deletar.grid(row=5, column=0, columnspan=2, padx=5,
                               pady=3, sticky='WE')
@@ -447,25 +466,66 @@ class GUIEquiSer(Toplevel):
                                pady=3, sticky='WE')
 
 class GUIEstatistica(Toplevel):
+    """Opere a estrutura tkinter do Menu Estatistica."""
     def __init__(self, parent):
         Toplevel.__init__(self, master=parent)
         self.wm_title('Estatistica')
         self.frame_estatistica = tk.Frame(self)
         self.frame_estatistica.grid(row=3, column=0)
-        
+
+        self.lbl_paciente = tk.Label(self.frame_estatistica, text='Paciente')
         self.lbl_idade = tk.Label(self.frame_estatistica, text='Idade Média')
         self.lbl_media_idade = tk.Label(self.frame_estatistica)
-        
-        self.btn_atualizar = tk.Button(self.frame_estatistica, text='Atualizar')
-        self.btn_retornar = tk.Button(self.frame_estatistica, text='Retornar')
-        
-        self.lbl_idade.grid(row=0, column=0, padx=5, pady=3)
-        self.lbl_media_idade.grid(row=0, column=1, padx=5, pady=3)
-        
-        self.btn_atualizar.grid(row=1, column=0, columnspan=2, padx=5,
-                               pady=3, sticky='WE')
-        self.btn_retornar.grid(row=2, column=0, columnspan=2, padx=5,
-                               pady=3, sticky='WE')
+        self.lbl_sexo = tk.Label(self.frame_estatistica, text='Sexo')
+        self.lbl_countsexo = tk.Label(self.frame_estatistica)
+        self.lbl_altura = tk.Label(self.frame_estatistica, text='Altura Média')
+        self.lbl_media_altura = tk.Label(self.frame_estatistica)
+        self.lbl_peso = tk.Label(self.frame_estatistica, text='Peso Médio')
+        self.lbl_media_peso = tk.Label(self.frame_estatistica)
+        self.lbl_profissional = tk.Label(self.frame_estatistica,
+                                         text='Profisisonal')
+        self.lbl_salario = tk.Label(self.frame_estatistica, text=
+                                    'Salário Médio')
+        self.lbl_media_salario = tk.Label(self.frame_estatistica)
+        self.lbl_sala = tk.Label(self.frame_estatistica,
+                                 text='Sala')
+        self.lbl_capacidade = tk.Label(self.frame_estatistica, text=
+                                       'Capacidade Média')
+        self.lbl_media_capacidade = tk.Label(self.frame_estatistica)
+        self.lbl_servico = tk.Label(self.frame_estatistica,
+                                    text='Serviço')
+        self.lbl_receita = tk.Label(self.frame_estatistica, text=
+                                    'Receita Média')
+        self.lbl_media_receita = tk.Label(self.frame_estatistica)
 
-    
+        self.btn_atualizar = tk.Button(self.frame_estatistica, text=
+                                       'Atualizar')
+        self.btn_retornar = tk.Button(self.frame_estatistica, text='Retornar')
+
+        self.lbl_paciente.grid(row=0, column=0, columnspan=2, padx=5, pady=3)
+        self.lbl_idade.grid(row=1, column=0, padx=5, pady=3)
+        self.lbl_media_idade.grid(row=1, column=1, padx=5, pady=3)
+        self.lbl_sexo.grid(row=2, column=0, padx=5, pady=3)
+        self.lbl_countsexo.grid(row=2, column=1, padx=5, pady=3)
+        self.lbl_altura.grid(row=3, column=0, padx=5, pady=3)
+        self.lbl_media_altura.grid(row=3, column=1, padx=5, pady=3)
+        self.lbl_peso.grid(row=4, column=0, padx=5, pady=3)
+        self.lbl_media_peso.grid(row=4, column=1, padx=5, pady=3)
+        self.lbl_profissional.grid(row=5, column=0, columnspan=2, padx=5,
+                                   pady=3)
+        self.lbl_salario.grid(row=6, column=0, padx=5, pady=3)
+        self.lbl_media_salario.grid(row=6, column=1, padx=5, pady=3)
+        self.lbl_sala.grid(row=0, column=2, columnspan=2, padx=5,
+                           pady=3)
+        self.lbl_capacidade.grid(row=1, column=2, padx=5, pady=3)
+        self.lbl_media_capacidade.grid(row=1, column=3, padx=5, pady=3)
+        self.lbl_servico.grid(row=2, column=2, columnspan=2, padx=5,
+                              pady=3)
+        self.lbl_receita.grid(row=3, column=2, padx=5, pady=3)
+        self.lbl_media_receita.grid(row=3, column=3, padx=5, pady=3)
+
+        self.btn_atualizar.grid(row=7, column=0, columnspan=2, padx=5,
+                                pady=3, sticky='WE')
+        self.btn_retornar.grid(row=8, column=0, columnspan=2, padx=5,
+                               pady=3, sticky='WE')
  
