@@ -483,6 +483,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8-menu-estatistica" title="8. Menu Estatistica" class="md-nav__link">
+    8. Menu Estatistica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" title="CMD" class="md-nav__link">
+    CMD
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -752,6 +766,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8-menu-estatistica" title="8. Menu Estatistica" class="md-nav__link">
+    8. Menu Estatistica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" title="CMD" class="md-nav__link">
+    CMD
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -783,7 +811,7 @@
 e, caso a senha não seja a padrão ou o computador não possua Postgres, ele irá requisitar que digite a senha certa. Sendo o segundo caso,
 feche o CMD e instale o <a href="https://www.postgresql.org/download/">Postgres</a>.</p>
 <h2 id="telas">Telas</h2>
-<p>O programa possui 7 telas:</p>
+<p>O programa possui 8 telas e um CMD:</p>
 <h3 id="1-menu-principal">1. Menu Principal</h3>
 <p>Cada tabela pode ser acessada com seus respectivos botões nesse menu. É permitido abrir mais de uma tabela ao mesmo tempo e,
 quando uma delas for fechada, o menu principal irá se manter. Para sair do programa, basta fechar o menu.</p>
@@ -871,6 +899,28 @@ existente nas outras tabelas, para garantir a integridade, então é necessario 
 <li>Equipamento: inserir código do equipamento.</li>
 </ol>
 <p><img alt="telaequipser" src="../images/equipser.png" /></p>
+<h3 id="8-menu-estatistica">8. Menu Estatistica</h3>
+<p>Essa interface mostra alguns dados que podem ser relevantes de algumas das outras tabelas. Ao clicar em atualizar, os dados irão aparecer, caso não tenha clicado antes
+ou irão atualizar se mudanças tiverem sido feitas nas outras tabelas. Os dados são:</p>
+<ol>
+<li>Idade média dos pacientes.</li>
+<li>Contagem de pessoas do sexo feminino e masculino.</li>
+<li>Altura média dos pacientes.</li>
+<li>Peso médio dos pacientes.</li>
+<li>Salário médio dos profissionais.</li>
+<li>Capacidade média das salas.</li>
+<li>Receita média dos serviços.</li>
+<li>Contagem de cada tipo de consulta existente (aparece no CMD).</li>
+</ol>
+<p><img alt="telaestatistica" src="../images/estatistica.png" /></p>
+<h3 id="cmd">CMD</h3>
+<p>Aqui serão apresentados os dados de cada select e os tipos de consultas da tabela estatistica. Cada linha corresponde a uma tupla e, no caso dos selects, são
+mostrados os campos na ordem que estão sendo apresentados na interface da tabela.</p>
+<p><img alt="telacmd" src="../images/cmd.png" /></p>
+<p>Nesse caso, o primeiro conjunto de linhas é cada plano de saúde e sua contagem (exemplos foram utilizados). E, embaixo, são conjuntos de tuplas da tabela paciente.
+A ordem de cada coluna será a ordem apresentada no modelo relacional e também será um pouco semelhante com os campos da interface. Então será, nessa ordem:
+Código, CPF, Nome, Idade, Sexo, Doença, Altura, Peso, Cidade, Bairro, Rua, Número e Complemento. Repare que em alguns lugares existem <code>''</code> ou <code>None</code>, isso significa
+que esses campos não foram preenchidos pelo usuário, sendo colocados valores nulos.</p>
                 
                   
                 
