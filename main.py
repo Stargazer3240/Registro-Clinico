@@ -495,8 +495,6 @@ class MainEstatistica(backend.BackendEstatistica):
     def comando_count_plano(self):
         """Realize a contagem de cada tipo de consulta."""
         countplano = self.count_plano()
-        self.gui.lbl_countplano["text"] = countplano
-
 
 PROGRAMA = MainMenu()
 PROGRAMA.mainloop()

@@ -645,11 +645,13 @@ class BackendEstatistica(BD):
         self.executar("SELECT tipo_consulta, COUNT(tipo_consulta) FROM \
                       servico GROUP BY tipo_consulta")
 
-        count_plano = self.fetchall()
+        rows = self.fetchall()
 
         self.persistir()
         self.desconectar()
-        return count_plano
+        for row in rows:
+            print(row)
+        print('')
 
 def inicializar_database():
     """Crie as tabelas no banco de dados."""
