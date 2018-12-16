@@ -491,8 +491,9 @@ class MainEstatistica(backend.BackendEstatistica):
         """Realize o cálculo da média da receita dos Serviços."""
         media = self.media_receita()
         self.gui.lbl_media_receita["text"] = media
-    
+
     def comando_count_plano(self):
+        """Realize a contagem de cada tipo de consulta."""
         countplano = self.count_plano()
         self.gui.lbl_countplano["text"] = countplano
 

@@ -637,15 +637,16 @@ class BackendEstatistica(BD):
         self.persistir()
         self.desconectar()
         return media
-    
+
     def count_plano(self):
+        """Busque a contagem de cada tipo de consulta da tabela Serviço."""
         self.conectar()
-        
+
         self.executar("SELECT tipo_consulta, COUNT(tipo_consulta) FROM \
                       servico GROUP BY tipo_consulta")
-        
+
         count_plano = self.fetchall()
-        
+
         self.persistir()
         self.desconectar()
         return count_plano
