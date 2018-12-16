@@ -637,6 +637,18 @@ class BackendEstatistica(BD):
         self.persistir()
         self.desconectar()
         return media
+    
+    def count_plano(self):
+        self.conectar()
+        
+        self.executar("SELECT tipo_consulta, COUNT(tipo_consulta) FROM \
+                      servico GROUP BY tipo_consulta")
+        
+        count_plano = self.fetchall()
+        
+        self.persistir()
+        self.desconectar()
+        return count_plano
 
 def inicializar_database():
     """Crie as tabelas no banco de dados."""

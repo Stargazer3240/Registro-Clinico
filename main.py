@@ -455,6 +455,7 @@ class MainEstatistica(backend.BackendEstatistica):
         self.comando_media_salario()
         self.comando_media_capacidade()
         self.comando_media_receita()
+        self.comando_count_plano()
 
     def comando_media_idade(self):
         """Realize o cálculo da média da idade dos Pacientes."""
@@ -490,6 +491,10 @@ class MainEstatistica(backend.BackendEstatistica):
         """Realize o cálculo da média da receita dos Serviços."""
         media = self.media_receita()
         self.gui.lbl_media_receita["text"] = media
+    
+    def comando_count_plano(self):
+        countplano = self.count_plano()
+        self.gui.lbl_countplano["text"] = countplano
 
 
 PROGRAMA = MainMenu()

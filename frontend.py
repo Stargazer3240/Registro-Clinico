@@ -497,7 +497,8 @@ class GUIEstatistica(Toplevel):
         self.lbl_receita = tk.Label(self.frame_estatistica, text=
                                     'Receita Média')
         self.lbl_media_receita = tk.Label(self.frame_estatistica)
-
+        self.lbl_plano = tk.Label(self.frame_estatistica, text='Plano')
+        self.lbl_countplano = tk.Label(self.frame_estatistica)
         self.btn_atualizar = tk.Button(self.frame_estatistica, text=
                                        'Atualizar')
         self.btn_retornar = tk.Button(self.frame_estatistica, text='Retornar')
@@ -523,7 +524,8 @@ class GUIEstatistica(Toplevel):
                               pady=3)
         self.lbl_receita.grid(row=3, column=2, padx=5, pady=3)
         self.lbl_media_receita.grid(row=3, column=3, padx=5, pady=3)
-
+        self.lbl_plano.grid(row=4, column=2, padx=5, pady=3)
+        self.lbl_countplano.grid(row=4, column=3, padx=5, pady=3)
         self.btn_atualizar.grid(row=7, column=0, columnspan=2, padx=5,
                                 pady=3, sticky='WE')
         self.btn_retornar.grid(row=8, column=0, columnspan=2, padx=5,
